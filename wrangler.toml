@@ -1,0 +1,13 @@
+# wrangler.toml
+name = "test-data-api" # Should match your worker name in Cloudflare dashboard
+main = "src/index.js"  # Specifies the entry point script
+compatibility_date = "2024-05-03" # Use a recent date
+
+# Add KV namespace binding with preview
+[[kv_namespaces]]
+binding = "API_KEYS"
+id = "84a56f1ad7e74bcd883d5b1b28760f69"
+preview_id = "6f8242024bae45a8a10a0b277f8dca25" # ID for local/preview environment
+
+[build]
+command = "npm install" # Ensures dependencies are installed on build
